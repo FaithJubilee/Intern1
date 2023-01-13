@@ -1,14 +1,18 @@
-    /* Add some padding on document's body to prevent the content
-    to go underneath the header and footer */
     body{        
         padding-top: 60px;
         padding-bottom: 40px;
         background: #d0d7de;
     }
     .container{
-        width: 80%;
-        margin: 0 auto; /* Center the DIV horizontally */
-        display: flexbox;
+        width: 70%;
+        justify-content: center;
+        justify-items: center;
+        margin: 0 auto; 
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        padding-left: 100px;
+        z-index: 1;
     }
     
     .fixed-header{
@@ -18,16 +22,20 @@
         background: #8d9366;
         padding: 10px 0;
         color: #fff;
+        z-index: 3;
     }
     .fixed-footer{
         bottom: 0;
+        height:min-content;
         width: 100%;
         position: fixed;        
         background: #b2b365;
         padding: 10px 0;
         color: #fff;
+        z-index: 2;
+        text-align: center;
     }
-    /* Some more styles to beutify this example */
+    
     nav a{
         color: rgb(5, 5, 5);
         text-decoration: none;
@@ -35,26 +43,53 @@
         display: inline-block;
     }
     .container p{
-        line-height: 200px; /* Create scrollbar to test positioning */
+        line-height: 200px; 
     }
 
 .card{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 270px;
     background: rgb(230,255,236);
     border-radius: 30px;
+    border-color: rgb(230,255,236);
     overflow: hidden;
     position: relative;
-    display: flex;
+    padding: 25px 25px;
+    display: inline-block;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     cursor: pointer;
     transition: all .25s ease;
     backface-visibility: hidden;
+    margin: 10px 10px;
 }
 .card:hover {
-    transform: scale(.9);
+    transform: scale(1.07);
+    background-color: #a0a199;
 }
 .card:hover:after {
     height: 280px;
+}
+.container2{
+    width: 1.7em;
+    height: 1.7em;
+    background: rgb(230,255,236);
+    border-radius: 10px;
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    margin: 10px 30px;
+    text-align: center;
+    color:#000
+}
+.container3{
+    width: 70%;
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto; 
+    display: flex;
+    text-align: center;
+    position: relative;
+    flex-direction: row;
+    z-index: 1;
 }
